@@ -1,0 +1,32 @@
+name: Deploy React App
+on: push
+jobs: 
+  test-react:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Get the rep code
+        uses: actions/checkout@v3 
+      - name: Install dep
+        run: npm ci
+      - name: Test app
+        run: npm run test
+  lint-react:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Get the rep code
+        uses: actions/checkout@v3 
+      - name: Install dep
+        run: npm ci
+      - name: Test app
+        run: npm run lint
+  build-react:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Get the rep code
+        uses: actions/checkout@v3 
+      - name: Install dep
+        run: npm ci
+      - name: Test app
+        run: npm run build
+      - name: Deploy  
+        run: echo Deploying...
